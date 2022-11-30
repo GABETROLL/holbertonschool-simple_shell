@@ -1,33 +1,41 @@
 #include "main.h"
 
 /**
- * stdin_tokens - Reads line from stdin
- * and returns an array of pointers to
- * individual tokens in the stdin line.
+ * str_tokens - Returns an array of pointers
+ * to individual tokens in the 'str'
+ * using "strtok(stdin_line, " \n")".
  *
  * The returned array is null poiinter-terminated.
+ * It's also malloc'ed, and needs to be freed.
+ * If it fails to malloc or if 'str is NULL,
+ * str_tokens returns  NULL.
  *
  * Return: NULL pointer-terminated array of
- * pointers to tokens in read line from stdin
+ * pointers to tokens in the 'str' string
+ * if the malloc call was successful,
+ * NULL otherwise
  */
-char **stdin_tokens(void)
+char **str_tokens(char *str)
 {
-	/* for reading the stdin line */
-	size_t buffsize = 100;
-	char *stdin_line = NULL;
-
-	/* for getting the off the stdin line tokens */
 	char **result;
 	char *token;
-	int line_len;
+	/*
+	 * malloc token pointer array with the same length
+	 * as 'str' to ensure an overflow doesn't happen:
+	 */
+	int str_len;
 	int result_index = 0;
 
-	getline(&stdin_line, &buffsize, stdin);
-	line_len = strlen(stdin_line);
+	if (!str)
+		return (NULL);
 
-	result = malloc(sizeof(char *) * (line_len + 1));
+	str_len = strlen(str);
 
-	token = strtok(stdin_line, " \n");
+	result = malloc(sizeof(char *) * (str_len + 1));
+	if (!result)
+		return (NULL);
+
+	token = strtok(str, " \n");
 	while (token)
 	{
 		result[result_index] = token;
