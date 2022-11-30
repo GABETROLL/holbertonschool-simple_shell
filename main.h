@@ -8,7 +8,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
+char **stdin_tokens(void);
 int create_fork(char **tokens);
-
 
 #endif
