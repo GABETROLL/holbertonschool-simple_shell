@@ -3,6 +3,7 @@
 int create_fork(char **tokens)
 {
 	pid_t child_pid;
+	pid_t test;
 	int status;
 
 	child_pid = fork();
@@ -12,8 +13,10 @@ int create_fork(char **tokens)
 		return (-1);
 	}
 	else if (child_pid == 0)
-    {
+	{
 		execve(tokens[0], tokens, NULL);
+		test = getpid();
+		printf("%u\n", test);
 	}
 	else
 	{
@@ -21,3 +24,4 @@ int create_fork(char **tokens)
 	}
 	return (1);
 }
+
