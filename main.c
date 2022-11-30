@@ -1,19 +1,26 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "main.h"
 
 int main(void)
 {
-	size_t buffsize = 200;
-	ssize_t user_input;
-	char *buffer = malloc(sizeof(char) * buffsize);
+	size_t buffsize = 0;
+	char *buffer = NULL, *token;
+	char **tokens = malloc(sizeof(char *));
+	int i = 0;
 
 	while (1)
 	{
 		printf("$ ");
-		user_input = getline(&buffer, &buffsize, stdin);
-
-		printf("%s", buffer);
+		getline(&buffer, &buffsize, stdin);
+		token = strtok(buffer, " \n");
+		
+		/** divide string and asign to tokens */
+		while (token != NULL)
+		{
+			tokens[i] = token;
+			i++;
+			token = strtok(NULL, " \n");
+		}
+		create_fork(tokens);
 	}
 	return (0);
 }
