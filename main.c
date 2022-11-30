@@ -17,14 +17,12 @@ int main(void)
 	{
 		size_t buffsize = 100;
 
-		stdin_line = NULL;
 		line_tokens = NULL;
 
 		printf("$ ");
 
-		getline(&stdin_line, &buffsize, stdin);
-		if (!stdin_line)
-			continue;
+		if (getline(&stdin_line, &buffsize, stdin) == -1)
+			break;
 
 		line_tokens = str_tokens(stdin_line);
 		if (!line_tokens)
