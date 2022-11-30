@@ -12,13 +12,12 @@ int create_fork(char **tokens)
 		return (-1);
 	}
 	else if (child_pid == 0)
-        {
+    {
 		execve(tokens[0], tokens, NULL);
-		exit(1);
 	}
 	else
 	{
 		wait(&status);
 	}
-	return (0);
+	return (1);
 }
