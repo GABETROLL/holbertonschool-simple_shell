@@ -20,7 +20,8 @@ int main(void)
 		buffsize = 100;
 		stdin_line = NULL;
 
-		printf("$ ");
+		if (isatty(0))
+			printf("$ ");
 
 		if (getline(&stdin_line, &buffsize, stdin) == -1)
 			break;
