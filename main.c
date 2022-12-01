@@ -10,16 +10,18 @@ int main(void)
 	int status = 1;
 
 	/* to get line from stdin: */
-	char *stdin_line = NULL;
-	char **line_tokens = NULL;
+	size_t buffsize;
+	char *stdin_line;
 
-	while (status == 1)
+	while (status)
 	{
-		size_t buffsize = 100;
+		char **line_tokens = NULL;
 
-		line_tokens = NULL;
+		buffsize = 100;
+		stdin_line = NULL;
 
-		printf("$ ");
+		if (isatty(0))
+			printf("$ ");
 
 		if (getline(&stdin_line, &buffsize, stdin) == -1)
 			break;
@@ -28,17 +30,14 @@ int main(void)
 		if (!line_tokens)
 		{
 			free(stdin_line);
-			continue;
+			break;
 		}
 
 		status = create_fork(line_tokens);
 
-		free(line_tokens);
 		free(stdin_line);
+		free(line_tokens);
 	}
-
-	free(line_tokens);
-	free(stdin_line);
 
 	return (0);
 }
