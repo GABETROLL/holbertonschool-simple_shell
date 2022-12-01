@@ -3,7 +3,6 @@
 int create_fork(char **tokens)
 {
 	pid_t child_pid;
-	pid_t test;
 	int status;
 
 	child_pid = fork();
@@ -19,9 +18,13 @@ int create_fork(char **tokens)
 		/*
 		 * Everything past the above line is
 		 * due to an executable not being found.
+		 *
+		 * if the stdin wasn't empty:
 		 */
 
-		write(1, "No such file or directory\n", 26);
+		if (tokens != NULL && *tokens !=  NULL)
+			write(1, "No such file or directory\n", 26);
+
 		return (0);
 	}
 	else

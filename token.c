@@ -29,7 +29,7 @@ char **str_tokens(char *str)
 	if (!str)
 		return (NULL);
 
-	str_len = strlen(str);
+	str_len = _strlen(str);
 
 	result = malloc(sizeof(char *) * (str_len + 1));
 	if (!result)
