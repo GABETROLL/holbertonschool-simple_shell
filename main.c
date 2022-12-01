@@ -21,7 +21,7 @@ int main(void)
 		stdin_line = NULL;
 
 		if (isatty(0))
-			printf("$ ");
+			write(1, "$ ", 2);
 
 		if (getline(&stdin_line, &buffsize, stdin) == -1)
 			break;
