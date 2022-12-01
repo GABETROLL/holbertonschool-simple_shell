@@ -3,7 +3,6 @@
 int create_fork(char **tokens)
 {
 	pid_t child_pid;
-	pid_t test;
 	int status;
 
 	child_pid = fork();
