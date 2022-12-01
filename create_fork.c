@@ -1,6 +1,6 @@
 #include "main.h"
 
-int create_fork(char **tokens)
+int create_fork(char *shell_name, char **tokens)
 {
 	pid_t child_pid;
 	int status;
@@ -23,7 +23,8 @@ int create_fork(char **tokens)
 		 */
 
 		if (tokens != NULL && *tokens !=  NULL)
-			write(1, "No such file or directory\n", 26);
+			write(1, shell_name, _strlen(shell_name));
+			write(1, ": No such file or directory\n", 28);
 
 		return (0);
 	}
