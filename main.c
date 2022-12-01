@@ -5,7 +5,7 @@
  *
  * Return: (hopefully) 0
  */
-int main(void)
+int main(__attribute__((unused)) int argc, char **argv)
 {
 	int status = 1;
 
@@ -33,7 +33,7 @@ int main(void)
 			break;
 		}
 
-		status = create_fork(line_tokens);
+		status = create_fork(argv[0], line_tokens);
 
 		free(stdin_line);
 		free(line_tokens);

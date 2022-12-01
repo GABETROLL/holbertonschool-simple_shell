@@ -9,7 +9,7 @@
 #include <sys/wait.h>
 
 char **str_tokens(char *str);
-int create_fork(char **tokens);
+int create_fork(char *shell_name, char **tokens);
 int _strlen(char *s);
 
 #endif
