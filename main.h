@@ -10,5 +10,6 @@
 
 char **str_tokens(char *str);
 int create_fork(char **tokens);
+int _strlen(char *s);
 
 #endif
