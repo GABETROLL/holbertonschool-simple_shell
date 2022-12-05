@@ -29,7 +29,11 @@ int create_fork(char *shell_name, char **tokens, int is_terminal)
 			if (is_terminal)
 				write(1, ": No such file or directory\n", 28);
 			else
-				write(1, ": 1: not found\n", 15);
+			{
+				write(1, ": 1: ", 5);
+				write(1, tokens[0], _strlen(tokens[0]));
+				write(1, ": not found\n", 12);
+			}
 		}
 
 		return (0);
