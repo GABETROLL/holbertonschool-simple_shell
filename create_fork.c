@@ -5,7 +5,6 @@ int create_fork(char **tokens)
 	pid_t child_pid;
 	int status;
 
-	(void) stdin_line;
 	child_pid = fork();
 	if (child_pid == -1)
 	{
