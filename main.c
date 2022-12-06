@@ -12,7 +12,7 @@ int main(void)
 	/* to get line from stdin: */
 	size_t buffsize;
 	char *stdin_line;
-	
+
 	while (status)
 	{
 		char **line_tokens = NULL;
@@ -24,14 +24,16 @@ int main(void)
 			write(1, "$ ", 2);
 
 		if (getline(&stdin_line, &buffsize, stdin) == -1)
-
+			break;
 		line_tokens = str_tokens(stdin_line);
 		if (!line_tokens)
 		{
 			free(stdin_line);
 			break;
 		}
-		status = create_fork(line_tokens, stdin_line, env);
+		
+		status = create_fork(line_tokens);
+		
 		free(stdin_line);
 		free(line_tokens);
 
