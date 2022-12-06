@@ -18,28 +18,41 @@ int _strlen(char *s)
 }
 
 /**
- * equal_strings - Returns 1 if strings 'a' and 'b'
- * are equal, 0 otherwise.
- * @a: string
- * @b: string
- * Return: 1 if strings 'a' and 'b' are equal,
- * 0 otherwise
+ * _strcmp - compares two string
+ * @s1: first string to compare
+ * @s2: second string to compare
+ * Return: if are the same 0 otherwise negative or positive value
  */
-int equal_strings(char *a, char *b)
+int _strcmp(char *s1, char *s2)
 {
-	int a_index = 0;
-	int b_index = 0;
-
-	while (1)
+	while (*s1 == *s2)
 	{
-		if (a[a_index] != b[b_index])
+		if (*s1 == '\0')
+		{
 			return (0);
-
-		if (a[a_index] == '\0')
-			return (1);
-
-		a_index++;
-		b_index++;
+		}
+		s1++;
+		s2++;
 	}
+	return (*s1 - *s2);
 }
 
+/**
+ * *_strcpy - function that copies the string pointed including null byte
+ * @dest: first pointer
+ * @src: second pointer
+ * Return: dest value (success)
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int cpy;
+
+	cpy = 0;
+	while (src[cpy] != '\0')
+	{
+		dest[cpy] = src[cpy];
+		cpy++;
+	}
+	dest[cpy] = '\0';
+	return (dest);
+}
