@@ -1,6 +1,6 @@
 #include "main.h"
 
-int create_fork(char **tokens, char *stdin_line, char **env)
+int create_fork(char **tokens)
 {
 	pid_t child_pid;
 	int status;
@@ -9,12 +9,12 @@ int create_fork(char **tokens, char *stdin_line, char **env)
 	child_pid = fork();
 	if (child_pid == -1)
 	{
-		perror("Error: fork fail");
+		perror("Error:");
 		return (0);
 	}
 	else if (child_pid == 0)
 	{
-		execve(tokens[0], tokens, env);
+		execve(tokens[0], tokens, NULL);
 
 		/*
 		 * Everything past the above line is
