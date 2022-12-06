@@ -13,9 +13,6 @@ int main(void)
 	size_t buffsize;
 	char *stdin_line;
 	
-	(void) ac;
-	(void) av;
-	
 	while (status)
 	{
 		char **line_tokens = NULL;
@@ -26,10 +23,7 @@ int main(void)
 		if (isatty(0))
 			write(1, "$ ", 2);
 
-		if (getline(&stdin_line, &buffsize, stdin) == EOF)
-		{
-			break;
-		}
+		if (getline(&stdin_line, &buffsize, stdin) == -1)
 
 		line_tokens = str_tokens(stdin_line);
 		if (!line_tokens)
@@ -37,14 +31,6 @@ int main(void)
 			free(stdin_line);
 			break;
 		}
-		
-		/* check if stdin is exit or env */
-		if (compare(line_tokens, env) == 1)
-                {
-                        free(stdin_line);
-			free(line_tokens);
-			break;
-                }
 		status = create_fork(line_tokens, stdin_line, env);
 		free(stdin_line);
 		free(line_tokens);
