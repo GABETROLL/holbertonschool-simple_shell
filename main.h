@@ -10,6 +10,7 @@
 
 char **str_tokens(char *str);
 int create_fork(char *shell_name, char **tokens, int is_terminal);
+int special_cases(char **tokens, char *shell_name, char **env);
 int _strlen(char *s);
-int equal_strings(char *a, char *b);
+int _strcmp(char *a, char *b);
 #endif
