@@ -37,7 +37,6 @@ int main(void)
 
 		free(stdin_line);
 		free(line_tokens);
-
 	}
 
 	return (0);
