@@ -25,15 +25,16 @@ int main(void)
 
 		if (getline(&stdin_line, &buffsize, stdin) == -1)
 			break;
+
 		line_tokens = str_tokens(stdin_line);
 		if (!line_tokens)
 		{
 			free(stdin_line);
 			break;
 		}
-		
+
 		status = create_fork(line_tokens);
-		
+
 		free(stdin_line);
 		free(line_tokens);
 
