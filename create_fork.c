@@ -13,6 +13,9 @@ int create_fork(char *shell_name, char **tokens, int is_terminal)
 	}
 	else if (child_pid == 0)
 	{
+		if (!tokens || !tokens[0])
+			return (0);
+
 		execve(tokens[0], tokens, NULL);
 
 		/*
