@@ -5,7 +5,7 @@
  *
  * Return: (hopefully) 0
  */
-int main(int ac, char **av, char **env)
+int main(void)
 {
 	int status = 1;
 
@@ -20,7 +20,7 @@ int main(int ac, char **av, char **env)
 	{
 		char **line_tokens = NULL;
 
-		buffsize = 0;
+		buffsize = 100;
 		stdin_line = NULL;
 
 		if (isatty(0))
@@ -28,8 +28,7 @@ int main(int ac, char **av, char **env)
 
 		if (getline(&stdin_line, &buffsize, stdin) == EOF)
 		{
-			free(stdin_line);
-			exit (EXIT_SUCCESS);
+			break;
 		}
 
 		line_tokens = str_tokens(stdin_line);
