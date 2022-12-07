@@ -16,4 +16,7 @@ char *get_path(char **env);
 char *split_path(char *file_token, char *path);
 int _strlen(char *s);
 int _strcmp(char *a, char *b);
+int _strncmp(const char *s1, const char *s2, size_t n);
+char *_strcpy(char *dest, char *src);
+char *_strcat(char *dest, char *src);
 #endif

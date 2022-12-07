@@ -16,7 +16,7 @@ char *get_path(char **env)
 
 	for (i = 0; env[i]; i++)
 	{
-		if (strncmp(env[i], "PATH=", 5) == 0)
+		if (_strncmp(env[i], "PATH=", 5) == 0)
 		{	
 			path = env[i];
 			break;
@@ -67,9 +67,9 @@ char *split_path(char *file_token, char *path)
 		if (!full_file_name)
 			return (NULL);
 
-		strcpy(full_file_name, dir);
-		strcat(full_file_name, "/");
-		strcat(full_file_name, file_token);
+		_strcpy(full_file_name, dir);
+		_strcat(full_file_name, "/");
+		_strcat(full_file_name, file_token);
 
 		if (stat(full_file_name, &st) == 0)
 			return (full_file_name);
