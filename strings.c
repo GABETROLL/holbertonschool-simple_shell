@@ -18,26 +18,6 @@ int _strlen(char *s)
 }
 
 /**
- * _strcmp - compares two string
- * @s1: first string to compare
- * @s2: second string to compare
- * Return: if are the same 0 otherwise negative or positive value
- */
-int _strcmp(char *s1, char *s2)
-{
-	while (*s1 == *s2)
-	{
-		if (*s1 == '\0')
-		{
-			return (0);
-		}
-		s1++;
-		s2++;
-	}
-	return (*s1 - *s2);
-}
-
-/**
  * *_strcpy - function that copies the string pointed including null byte
  * @dest: first pointer
  * @src: second pointer
@@ -56,3 +36,31 @@ char *_strcpy(char *dest, char *src)
 	dest[cpy] = '\0';
 	return (dest);
 }
+
+/**
+ * _strcat - function that concatenates two string
+ * @dest: first array
+ * @src: second array
+ * Return: pointer to dest (success)
+ */
+char *_strcat(char *dest, char *src)
+{
+        int len, i;
+
+        len = 0;
+        i = 0;
+
+        while (dest[len] != '\0')
+                len++;
+
+        while (src[i] != '\0')
+        {
+                dest[len] = src[i];
+                len++;
+                i++;
+        }
+
+        dest[len] = '\0';
+        return (dest);
+}
+
