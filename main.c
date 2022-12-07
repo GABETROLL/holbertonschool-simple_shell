@@ -5,7 +5,7 @@
  *
  * Return: (hopefully) 0
  */
-int main(__attribute__((unused)) int argc, char **argv)
+int main(__attribute__((unused)) int argc, char **argv, char **env)
 {
 	int status = 1;
 
@@ -17,6 +17,7 @@ int main(__attribute__((unused)) int argc, char **argv)
 	{
 		char **line_tokens = NULL;
 		int is_terminal;
+		int special_case;
 
 		buffsize = 100;
 		stdin_line = NULL;
@@ -38,11 +39,21 @@ int main(__attribute__((unused)) int argc, char **argv)
 			break;
 		}
 
-		if (line_tokens[0] && equal_strings(line_tokens[0], "exit") && !line_tokens[1])
+		special_case = special_cases(line_tokens, argv[0], env);
+
+		/* exit */
+		if (special_case == 0)
 		{
 			free(stdin_line);
 			free(line_tokens);
 			return (0);
+		}
+		/* env */
+		else if (special_case == 1)
+		{
+			free(stdin_line);
+			free(line_tokens);
+			continue;
 		}
 
 		status = create_fork(argv[0], line_tokens, is_terminal);
