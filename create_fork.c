@@ -1,6 +1,6 @@
 #include "main.h"
 
-int create_fork(char *shell_name, char **tokens, int is_terminal)
+int create_fork(char *shell_name, char **tokens, char **env, int is_terminal)
 {
 	pid_t child_pid;
 	int status;
@@ -13,10 +13,13 @@ int create_fork(char *shell_name, char **tokens, int is_terminal)
 	}
 	else if (child_pid == 0)
 	{
+		char *full_file_name;
+		char *path;
+
 		if (!tokens || !tokens[0])
 			return (0);
 
-		execve(tokens[0], tokens, NULL);
+		execve(tokens[0], tokens, env);
 
 		/*
 		 * Everything past the above line is
@@ -24,6 +27,19 @@ int create_fork(char *shell_name, char **tokens, int is_terminal)
 		 *
 		 * if the stdin wasn't empty:
 		 */
+
+		path = get_path(env);
+		full_file_name = split_path(tokens[0], path);
+
+		if (full_file_name != NULL && path != NULL)
+		{
+			char *exec_name = tokens[0];
+
+			tokens[0] = full_file_name;
+			execve(tokens[0], tokens, env);
+			tokens[0] = exec_name;
+			free(full_file_name);
+		}
 
 		if (tokens != NULL && *tokens != NULL)
 		{
