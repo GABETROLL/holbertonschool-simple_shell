@@ -56,7 +56,7 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 			continue;
 		}
 
-		status = create_fork(argv[0], line_tokens, is_terminal);
+		status = create_fork(argv[0], line_tokens, env, is_terminal);
 
 		free(stdin_line);
 		free(line_tokens);
