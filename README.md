@@ -1,17 +1,5 @@
 # Holberton Simple Shell
 
-## Table of Contents
-1. Introduction
-2. Project Requirements
-3. Project Documentation
-	- File Description
-	- Installation
-	- Usage
-	- Examples
-4. Authors
-    
-## Introduction
-
 The Holberton Simple Shell (hsh) is a command language interpreter that execute commands from a command line string, the standard input, or a specified file. It handle the PATH.
 
 ## Project Requirements
