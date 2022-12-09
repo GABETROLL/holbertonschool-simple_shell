@@ -46,7 +46,7 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 		{
 			free(stdin_line);
 			free(line_tokens);
-			return (0);
+			return (EXIT_SUCCESS);
 		}
 		/* env */
 		else if (special_case == 1)
@@ -62,6 +62,6 @@ int main(__attribute__((unused)) int argc, char **argv, char **env)
 		free(line_tokens);
 	}
 
-	return (0);
+	return (EXIT_SUCCESS);
 }
 
