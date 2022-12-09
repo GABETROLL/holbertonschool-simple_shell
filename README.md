@@ -1,8 +1,10 @@
 # Holberton Simple Shell
 
-The Holberton Simple Shell (hsh) is a command language interpreter that execute commands from a command line string, the standard input, or a specified file. It handle the PATH.
+The Holberton Simple Shell (hsh) is a project assign as part of Holberton School's curriculum. Basically,the hsh is a command language interpreter that execute commands from a command line string, the standard input, or a specified file. It handle the PATH.
 
 ## Project Requirements
+
+The project requires complete the following 7 task:
 
 	* Task 0 - Write a README, Write a man for your shell & AUTHOR file.
 
@@ -46,11 +48,11 @@ The Holberton Simple Shell (hsh) is a command language interpreter that execute 
 
 ### Installation
 
-***1) Clone the repo***
+***Clone the repo***
 ```
 git@github.com:GABETROLL/holbertonschool-simple_shell.git
 ```
-***2) Compile it***
+***Compile it***
 ```
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 ```
@@ -111,4 +113,5 @@ At the moment the hsh return value is always 0, exit usual codes do not apply.
 ## Authors
 
 ![Gabriel Fernandez Nazario](https://github.com/GABETROLL)
+
 ![Rafael O. Vega Rodriguez](https://github.com/rvegarodz)
