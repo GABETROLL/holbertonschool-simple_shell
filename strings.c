@@ -45,22 +45,22 @@ char *_strcpy(char *dest, char *src)
  */
 char *_strcat(char *dest, char *src)
 {
-        int len, i;
+	int len, i;
 
-        len = 0;
-        i = 0;
+	len = 0;
+	i = 0;
 
-        while (dest[len] != '\0')
-                len++;
+	while (dest[len] != '\0')
+		len++;
 
-        while (src[i] != '\0')
-        {
-                dest[len] = src[i];
-                len++;
-                i++;
-        }
+	while (src[i] != '\0')
+	{
+		dest[len] = src[i];
+		len++;
+		i++;
+	}
 
-        dest[len] = '\0';
-        return (dest);
+	dest[len] = '\0';
+	return (dest);
 }
 

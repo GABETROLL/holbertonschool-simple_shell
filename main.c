@@ -3,6 +3,10 @@
 /**
  * main - Runs shell.
  *
+ * @argc: amount of shell arguments
+ * @argv: shell arguments
+ * @env: env for this process
+ *
  * Return: (hopefully) 0
  */
 int main(__attribute__((unused)) int argc, char **argv, char **env)

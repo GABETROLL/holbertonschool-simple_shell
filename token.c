@@ -10,6 +10,8 @@
  * If it fails to malloc or if 'str is NULL,
  * str_tokens returns  NULL.
  *
+ * @str: string with tokens separated by spaces
+ *
  * Return: NULL pointer-terminated array of
  * pointers to tokens in the 'str' string
  * if the malloc call was successful,

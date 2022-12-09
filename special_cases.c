@@ -20,15 +20,13 @@ int special_cases(char **tokens, char *shell_name, char **env)
 		{
 			if (!tokens[1])
 				return (0);
-			else
-			{
-				write(1, shell_name, _strlen(shell_name));
-				write(1, ": sh: 1: exit: Illegal number: ", 31);
-				write(1, tokens[1], _strlen(tokens[1]));
-				write(1, "\n", 1);
 
-				return (1);
-			}
+			write(1, shell_name, _strlen(shell_name));
+			write(1, ": sh: 1: exit: Illegal number: ", 31);
+			write(1, tokens[1], _strlen(tokens[1]));
+			write(1, "\n", 1);
+
+			return (1);
 		}
 		if (_strcmp(tokens[0], "env") == 0)
 		{

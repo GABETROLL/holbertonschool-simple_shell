@@ -8,16 +8,16 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-        while (*s1 == *s2)
-        {
-                if (*s1 == '\0')
-                {
-                        return (0);
-                }
-                s1++;
-                s2++;
-        }
-        return (*s1 - *s2);
+	while (*s1 == *s2)
+	{
+		if (*s1 == '\0')
+		{
+			return (0);
+		}
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
 }
 
 /**
@@ -29,13 +29,13 @@ int _strcmp(char *s1, char *s2)
  */
 int _strncmp(const char *s1, const char *s2, size_t n)
 {
-        if (n == 0)
-                return (0);
-        do {
-                if (*s1 != *s2++)
-                        return (*(unsigned char *)s1 - *(unsigned char *)--s2);
-                if (*s1++ == 0)
-                        break;
-        } while (--n != 0);
-        return (0);
+	if (n == 0)
+		return (0);
+	do {
+		if (*s1 != *s2++)
+			return (*(unsigned char *)s1 - *(unsigned char *) --s2);
+				if (*s1++ == 0)
+					break;
+	} while (--n != 0);
+	return (0);
 }

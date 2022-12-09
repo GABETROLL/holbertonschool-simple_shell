@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * get_path - get PATH string in the env 
+ * get_path - get PATH string in the env
  * @env: environment list with variables
  * Return: pointer to string with all directories
  * in 'PATH' string
@@ -17,7 +17,7 @@ char *get_path(char **env)
 	for (i = 0; env[i]; i++)
 	{
 		if (_strncmp(env[i], "PATH=", 5) == 0)
-		{	
+		{
 			path = env[i];
 			break;
 		}
