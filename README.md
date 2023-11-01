@@ -107,11 +107,23 @@ env-environ.c  exec    fork    mypid   ppid   printenv  promptc  shell     shell
 username@original-prompt:~$
 ```
 ### Bugs
-
 At the moment the hsh return value is always 0, exit usual codes do not apply. 
 
 ## Authors
+### Gabriel Fernandez
+- [GitHub](https://github.com/GABETROLL/)
+- [LinkedIn](https://www.linkedin.com/in/gabriel-fernandez-415609278/)
+- [X](https://twitter.com/gabe_programs)
+- [My Portfolio Project](https://github.com/GABETROLL/Tetris3D/)
 
-![Gabriel Fernandez Nazario](https://github.com/GABETROLL)
+#### Gabriel - Building this project
+At first, I wanted to take over the main structure of the code, but Rafael did a pretty good job on that. The project listed A LOT of builtin C syscalls we could use, and I moved on with trying to understand what the syscalls that Rafael was using did. After a lot of the project was done, I moved on to try to catch as many memory leaks as I could, but ended up not being able to catch them all.
+##### Gabriel - Biggest Challenges
+- Understanding what the syscalls do
+- Learning to be a good teammate
+- Understanding and using ``strtok``
+- Catching memory leaks
+- The stress of knowing this was a very challenging project
 
-![Rafael O. Vega Rodriguez](https://github.com/rvegarodz)
+### Rafael O. Vega Rodriguez
+[GitHub](https://github.com/rvegarodz/)
