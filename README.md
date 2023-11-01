@@ -131,4 +131,4 @@ At first, I wanted to take over the main structure of the code, but Rafael did a
 - The stress of knowing this was a very challenging project
 
 ### Rafael O. Vega Rodriguez
-[GitHub](https://github.com/rvegarodz/)
+- [GitHub](https://github.com/rvegarodz/)
