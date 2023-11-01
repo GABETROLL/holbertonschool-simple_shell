@@ -48,9 +48,13 @@ The project requires complete the following 7 task:
 
 ### Installation
 
-***Clone the repo***
+***Clone the repo**(in the desired directory)*
 ```
-git@github.com:GABETROLL/holbertonschool-simple_shell.git
+git clone git@github.com:GABETROLL/holbertonschool-simple_shell.git
+```
+***Move to the repo's directory***
+```
+cd holbertonschool-simple_shell/
 ```
 ***Compile it***
 ```
@@ -107,8 +111,9 @@ env-environ.c  exec    fork    mypid   ppid   printenv  promptc  shell     shell
 username@original-prompt:~$
 ```
 ### Bugs
-At the moment the hsh return value is always 0, exit usual codes do not apply. 
+At the moment the hsh return value is always 0, exit usual codes do not apply.
 
+- Pressing ``Ctrl+c`` to exit the shell causes one memory leak of 1,144 bytes.
 ## Authors
 ### Gabriel Fernandez
 - [GitHub](https://github.com/GABETROLL/)
