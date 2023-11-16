@@ -1,6 +1,8 @@
 # Holberton Simple Shell
 
-The Holberton Simple Shell (hsh) is a project assign as part of Holberton School's curriculum. Basically, the hsh is a command language interpreter that execute commands from a command line string, the standard input, or a specified file. It handle the PATH.
+The Holberton Simple Shell (hsh) is a project assigned as part of Holberton School's curriculum. Basically, the hsh is a command language interpreter that executes commands from a command line string, the standard input, or a specified file. It handles the PATH.
+
+This project is similar to the Linux Shell.
 
 ## Project Requirements
 
