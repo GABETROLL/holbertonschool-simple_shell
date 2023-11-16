@@ -128,7 +128,6 @@ At first, I wanted to take over the main structure of the code, but Rafael did a
 - Learning to be a good teammate
 - Understanding and using ``strtok``
 - Catching memory leaks
-- The stress of knowing this was a very challenging project
 
 ### Rafael O. Vega Rodriguez
 - [GitHub](https://github.com/rvegarodz/)
